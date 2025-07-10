@@ -125,7 +125,7 @@ def run_schedule():
         schedule.run_pending()
         time.sleep(1)
 
-# === RUN FLASK APP (FOR SAME NETWORK USE) ===
+# === RUN FLASK APP (FOR RENDER) ===
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
-
+    port = int(os.environ.get("PORT", 8000))
+    app.run(host="0.0.0.0", port=port)
