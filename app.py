@@ -11,6 +11,7 @@ import threading
 
 # === SETUP ===
 app = Flask(__name__)
+port = int(os.environ.get('PORT', 4000))
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
@@ -128,6 +129,4 @@ def run_schedule():
 # === RUN FLASK APP (FOR SAME NETWORK USE) ===
 # === RUN FLASK APP (Render-ready) ===
 if __name__ == '__main__':
-    import os
-    port = int(os.environ.get("PORT", 8000))
     app.run(host='0.0.0.0', port=port)
